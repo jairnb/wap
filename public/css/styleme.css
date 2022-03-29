@@ -25,3 +25,34 @@ p > span {
 .sad-span {
     margin-left: 2%;
 }
+.extra {
+    margin: 3%;
+}
+
+.extra-link{
+    text-decoration: none;
+    color: red;
+
+}
+.extra-link:hover{
+    text-decoration: underline;    
+}
+
+.extra > p {
+    transform: rotateX(0.5turn);
+}
+.extra > p::first-letter{
+    font-size: 24px;
+    color: red;
+}
+
+ol > li > ul > li {
+    color: yellow;
+    list-style-type: none;
+}
+
+ol > li > ul > li > ul > li {
+    color: black;
+    list-style-type: none;
+}
+
