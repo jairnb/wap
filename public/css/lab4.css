@@ -19,7 +19,8 @@
 
 .form-body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
     grid-template-rows: auto;
     column-gap: 3%;
 }
