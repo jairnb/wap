@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/lab4.css">
+    <title>HTML Form</title>
+</head>
+<body>
+    <a href="../../index.html">Lab 1 - Home</a>
+    
+
+    <div class="container">
+        <form action="">
+            <div class="form-header">
+                <span>
+                    Workshop Registration
+                </span>
+            
+                <select name="" id="options">
+                    <option value="">Option 1</option>
+                    <option value="">Option 2</option>
+                    <option value="">Option 3</option>
+                </select>
+            </div>
+
+            <div class="form-body">
+                <div class="left-part">
+                    <p><u>Regiter now while seats are available</u></p>
+
+                    <div>
+                        <label for="fname">First Name <span class="required-signal">*</span></label>
+                        <input type="text" name="fname" id="fname" required class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="lname">Last Name <span class="required-signal">*</span></label>
+                        <input type="text" name="lname" id="lname" required class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="company">Company/Instituion <span class="required-signal">*</span></label>
+                        <input type="text" name="company" id="company" required class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="address">Address <span class="required-signal">*</span></label>
+                        <textarea name="address" id="address" cols="30" rows="10" class="" required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="state">State/Province/Region</label>
+                        <select name="state" id="state" class="floatright">
+                            <option value="IO">Iowa</option>
+                            <option value="NY">New York</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="country">Country</label>
+                        <select name="country" id="country" class="floatright">
+                            <option value="IO">USA</option>
+                            <option value="NY">Mexico</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="email">Email <span class="required-signal">*</span></label>
+                        <input type="email" name="email" id="email" required class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="fname">Phone Number <span class="required-signal">*</span></label>
+                        <input type="text" name="fname" id="fname" required class="floatright">
+                    </div>
+                    
+                </div>
+
+                <div class="right-part">
+                    <p><u>Lunch</u></p>
+
+                    <div>
+                        <label for="meal">Meal Perference</label>
+                        <select name="meal" id="meal">
+                            <option value="">Vegetarian</option>
+                            <option value="">All</option>
+                        </select>
+                    </div>
+
+                    <p><u>Payment Details</u></p>
+
+                    <div>
+                        <label for="payment">Meal Perference</label>
+                        <div class="payment-type">
+                            <label><input type="checkbox" name="cash">Cash</label><br>
+                            <label><input type="checkbox" name="cheque">Cheque</label><br>
+                            <label><input type="checkbox" name="demand_draf">Demand Draft</label><br>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="dd">DD/Cheque No.</label>
+                        <input type="text" name="dd" id="dd" class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="drawn">Drawn On (BAnk Name)</label>
+                        <input type="text" name="drawn" id="drawn" class="floatright">
+                    </div>
+
+                    <div>
+                        <label for="pay">Payable at</label>
+                        <input type="text" name="pay" id="pay" class="floatright">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="btn">Submit</button>
+                <button type="reset" class="btn">Reset</button>
+            </div>
+              
+        </form>
+        
+
+    </div>
+
+    <div class="validator">
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fjairnb.github.io%2Fwap%2Fpublic%2Fpages%2Faboutme.html" target="blank">
+            <img src="../img/HTML-checker.png" alt="html validator" width="5%" height="5%"/>
+        </a>
+    
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjairnb.github.io%2Fwap%2Fpublic%2Fpages%2Faboutme.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="blank">
+            <img src="../img/css_checker.png" alt="html validator" width="5%" height="5%"/>
+        </a>
+    </div>
+</body>
+</html>
