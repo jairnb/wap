@@ -19,7 +19,6 @@
 
 .form-body {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 3%;
@@ -42,19 +41,14 @@
     margin: 3%;
 }
 
-/* .left-part {
-    background-color: aqua;
-} */
-
-input {
-    padding-left: 0%;
-}
-
 label {
     font-weight: bold;
-
 }
 
+.payment-type  {
+    margin-left: 60%;
+    margin-bottom: 5%;
+}
 .payment-type label {
     font-weight: lighter;   
 }
@@ -66,7 +60,9 @@ label {
     border-radius: 5px;
 }
 
-
+.address {
+    margin-left: 62%;
+}
 .validator {
     margin: 2%;
 }
@@ -75,4 +71,4 @@ label {
     float: right;
 }
 
-select { width: 13.6em }
+select { width: 13.8em }

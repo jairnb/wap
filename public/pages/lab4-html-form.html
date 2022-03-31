@@ -12,7 +12,7 @@
     
 
     <div class="container">
-        <form action="">
+        <form action="#">
             <div class="form-header">
                 <span>
                     Workshop Registration
@@ -46,7 +46,9 @@
 
                     <div>
                         <label for="address">Address <span class="required-signal">*</span></label>
-                        <textarea name="address" id="address" cols="30" rows="10" class="" required></textarea>
+                        <div class="">
+                            <textarea name="address" id="address" cols="21" rows="10" class="address" required></textarea>
+                        </div>
                     </div>
 
                     <div>
@@ -76,8 +78,8 @@
                     </div>
 
                     <div>
-                        <label for="fname">Phone Number <span class="required-signal">*</span></label>
-                        <input type="text" name="fname" id="fname" required class="floatright">
+                        <label for="phone">Phone Number <span class="required-signal">*</span></label>
+                        <input type="text" name="phone" id="phone" required class="floatright">
                     </div>
                     
                 </div>
@@ -87,7 +89,7 @@
 
                     <div>
                         <label for="meal">Meal Perference</label>
-                        <select name="meal" id="meal">
+                        <select name="meal" id="meal" class="floatright">
                             <option value="">Vegetarian</option>
                             <option value="">All</option>
                         </select>
@@ -96,7 +98,7 @@
                     <p><u>Payment Details</u></p>
 
                     <div>
-                        <label for="payment">Meal Perference</label>
+                        <label>Meal Perference</label>
                         <div class="payment-type">
                             <label><input type="checkbox" name="cash">Cash</label><br>
                             <label><input type="checkbox" name="cheque">Cheque</label><br>
@@ -132,11 +134,11 @@
     </div>
 
     <div class="validator">
-        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fjairnb.github.io%2Fwap%2Fpublic%2Fpages%2Faboutme.html" target="blank">
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fjairnb.github.io%2Fwap%2Fpublic%2Fpages%2Flab4-html-form.html" target="blank">
             <img src="../img/HTML-checker.png" alt="html validator" width="5%" height="5%"/>
         </a>
     
-        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjairnb.github.io%2Fwap%2Fpublic%2Fpages%2Faboutme.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="blank">
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjairnb.github.io%2Fwap%2Fpublic%2Fpages%2Flab4-html-form.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="blank">
             <img src="../img/css_checker.png" alt="html validator" width="5%" height="5%"/>
         </a>
     </div>
