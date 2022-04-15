@@ -26,6 +26,11 @@ app.use('/', (req, res, next) => {
 // });
 // app.use(my_exception);
 
+
+app.use(function (err, req, res, next) {
+    res.status(500).send('Something broke!');
+});
+
 app.listen(3000, () => {
     console.log('Listem at 3000')
 })

@@ -65,8 +65,8 @@ b.print();
 
 
 let Node2 = {
-    value: Number,
-    next: this
+    value: null,
+    next: null
 };
 
 

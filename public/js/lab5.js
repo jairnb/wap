@@ -22,3 +22,20 @@ const getNewArray = function(arr) {
 }
 
 console.log(getNewArray(['test', 'Homework', 'abs','city', 'serializable']))
+
+
+let a = {
+    name: 'a',
+    fn: 'k',
+    o: 'o'
+}
+
+let b = {
+    name: 'b',
+    fn: 'i',
+    p: 'p'
+}
+
+let c = {...a, ...b}
+
+console.log(c)
