@@ -1,25 +1,25 @@
 let books = [
     {id: 1, title: "ABD", ISBN: 11, publishedDate: new Date('2014-04-03'), author: {fname: 'John', lname: 'Doe'}},
-    {id: 2, title: "XYZ", ISBN: 22, publishedDate: new Date('2015-04-03'), author: {fname: 'Jane', lname: 'Jones'}},
+    // {id: 2, title: "XYZ", ISBN: 22, publishedDate: new Date('2015-04-03'), author: {fname: 'Jane', lname: 'Jones'}}, 
 ];
 
 module.exports = class Book {
     constructor(id, title, ISBN, publishedDate, author){
         this.id = id;
         this.title = title;
-        this.ISBN = ISBN;
+        this.ISBN = ISBN; 
         this.publishedDate = publishedDate;
         this.author = author;
     }
 
     static save(book) {
-        let b = new Book(Math.floor(Math.random() * 1000), book.title, book.ISBN, book.publishedDate, book.author);
+        let b = new Book(books.length + 1, book.title, book.ISBN, book.publishedDate, book.author);
         books.push(b);
         return b;
     }
 
     static getAll() {
-        return books;
+        return books.sort((a, b) => b.id - a.id);
     }
 
     static get(id) {
