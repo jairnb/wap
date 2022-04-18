@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Music 2022</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="./resources/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="./resources/template/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="./resources/style.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                        <div class="sidebar-brand-icon rotate-n-15">
+                            <i class="fas fa-laugh-wink"></i>
+                        </div>
+                        <div class="sidebar-brand-text mx-3">My Music<sup>2022</sup></div>
+                    </a>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2" />
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <div>
+                        <form action="" method="post">
+                            <div class="d-sm-inline-block form-inline ml-2">
+                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    aria-describedby="emailHelp" placeholder="Username" />
+                            </div>
+                            <div class="d-sm-inline-block form-inline">
+                                <input type="password" class="form-control form-control-user" id="exampleInputPassword"
+                                    placeholder="Password" />
+                            </div>
+                            <a href="index.html" class="btn btn-primary btn-user">
+                                Login
+                            </a>
+                        </form>
+                    </div>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="" id="music-content">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">All Musics</h6>
+                            </div>
+                            <div class="card-body">
+                                <table class="table display table-bordered" id="dataTable-all-music" width="100%"
+                                    cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Title</th>
+                                            <th>Release Date</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">My Playlist</h6>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered display" id="dataTable-playlist" width="100%"
+                                    cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Title</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+
+            <div class="my-music-player">
+                <audio id="audio">
+                    <source src="http://laptevpavel.ru/playground/player/Ari_Mason-Dressed_For_Space.ogg" />
+                    <source src="http://laptevpavel.ru/playground/player/Ari_Mason-Dressed_For_Space.mp3" />
+                </audio>
+
+                <div class="audio-player">
+                    <!-- <div class="cover-art">
+                        <a href="https://soundcloud.com/arimason" target="_blank"></a>
+                    </div> -->
+                    <div class="info">
+                        <h2>Ari Mason</h2>
+                            <!--  <h3>
+                            Dressed For Space
+                            <span style="color: #999999; font-size: 12px">(<a
+                                    href="https://www.youtube.com/watch?v=mjwM0eIQ6Rc" target="_blank">TR/SR</a>
+                                cvr)</span>
+                        </h3> -->
+                        <p id="timeleft">00:00</p>
+                        <div class="progressbar_slide">
+                            <div class="progressbar_range"></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div class="controls_plays">
+                            <svg id="prev_btn" viewBox="0 0 24.5 23.6">
+                                <polygon points="0,11.8 13.5,0 13.5,10.7 24.5,0 24.5,23.6 13.5,12.9 13.5,23.6 " />
+                            </svg>
+
+                            <svg id="plays_btn" viewBox="0 0 24.5 30.9">
+                                <g id="play_btn">
+                                    <path d="M0,30.9L0,0l24.5,15.4L0,30.9z" />
+                                </g>
+                                <g id="pause_btn">
+                                    <rect x="0" y="0" width="8.2" height="30.9" />
+                                    <rect x="16.2" y="0" width="8.2" height="30.9" />
+                                </g>
+                            </svg>
+
+                            <svg id="next_btn" viewBox="0 0 24.5 23.6">
+                                <polygon points="25,11.8 11.5,0 11.5,10.7 0.5,0 0.5,23.6 11.5,12.9 11.5,23.6 " />
+                            </svg>
+                        </div>
+                        <div class="controls_player">
+                        
+
+                            <svg id="repeatAll_btn" viewBox="0 0 23 23">
+                                <path d="M7.3,6l0.4,2.8l3.6-5l-5-3.6l0.5,3C3.6,4.4,1.1,7.4,1.1,11c0,4.4,2.4,8,7.4,8.3v-2.7
+                                            c-3-0.3-4.7-2.7-4.7-5.6C3.8,8.8,5.5,7,7.3,6z" />
+                                <path d="M21.5,11c0-4.4-4-8-8-8.3v2.7c2,0.3,5.2,2.7,5.2,5.6c0,2.2-1.2,4-3,5l-0.4-2.8l-3.6,5l5,3.6l-0.6-3
+                                            C19.4,17.6,21.5,14.6,21.5,11z" />
+                            </svg>
+
+                            <svg id="shuffle_btn" viewBox="0 0 23 23" ><path d="M4 9h3.5c.736 0 1.393.391 1.851 1.001a8.11 8.11 0 0 1 1.191-1.662C9.739 7.516 8.676 7 7.5 7H4a1 1 0 1 0 0 2zM11.685 12.111C12.236 10.454 13.941 9 15.334 9h1.838l-1.293 1.293a.999.999 0 1 0 1.414 1.414L21 8l-3.707-3.707a.999.999 0 1 0-1.414 1.414L17.172 7h-1.838c-2.274 0-4.711 1.967-5.547 4.479l-.472 1.411C8.674 14.816 7.243 16 6.5 16H4a1 1 0 1 0 0 2h2.5c1.837 0 3.863-1.925 4.713-4.479l.472-1.41z"/><path d="M15.879 13.293a.999.999 0 0 0 0 1.414L17.172 16h-2.338c-1.268 0-2.33-.891-2.691-2.108a9.335 9.335 0 0 1-1.09 2.185C11.939 17.239 13.296 18 14.834 18h2.338l-1.293 1.293a.999.999 0 1 0 1.414 1.414L21 17l-3.707-3.707a.999.999 0 0 0-1.414 0z"/></svg>
+
+                            <svg id="repeat1_btn" viewBox="0 0 40 40">
+                                <path d="M0 0h48v48H0z" fill="none"/>
+                                <path d="M14 14h20v6l8-8-8-8v6H10v12h4v-8zm20 20H14v-6l-8 8 8 8v-6h24V26h-4v8zm-8-4V18h-2l-4 2v2h3v8h3z"/>
+                            </svg>
+
+                            <svg id="playlist_btn" viewBox="0 0 23 23">
+                                <rect x="1.5" y="2" width="20" height="3" />
+                                <rect x="1.5" y="9" width="20" height="3" />
+                                <rect x="1.5" y="17" width="20" height="3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; My Music 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <!-- <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a> -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="./resources/template/vendor/jquery/jquery.min.js"></script>
+    <script src="./resources/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="./resources/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="./resources/template/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="./resources/template/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <!-- <script src="./resources/template/js/demo/chart-area-demo.js"></script>
+    <script src="./resources/template/js/demo/chart-pie-demo.js"></script> -->
+    <script src="./resources/template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="./resources/template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="./resources/template/js/demo/datatables-demo.js"></script>
+
+    <script src="./resources/scripts.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("table.display").DataTable({
+                searching: false,
+                info: false,
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- <figure>
+            <figcaption>Listen to the T-Rex:</figcaption>
+            <audio controls src="../backend/sons/All-Malgravado Sons.mp3">
+                    Your browser does not support the
+                    <code>audio</code> element.
+            </audio>
+        </figure> -->
