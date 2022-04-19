@@ -7,6 +7,6 @@ router.get('/:id', song_controller.getById);
 
 router.get('/', song_controller.getAll);
 
-
+router.get('/play/:id', song_controller.playSong);
 
 module.exports = router;

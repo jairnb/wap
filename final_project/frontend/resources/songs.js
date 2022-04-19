@@ -2,6 +2,7 @@
 
 function loadTableData(items) {
     const table = document.getElementById("all-songs-table");
+    table.innerHTML = '';
     items.forEach(item => {
         let row = table.insertRow();
         
@@ -23,7 +24,12 @@ function loadTableData(items) {
 }
 
 async function addToPlaylist(id) {
-    let song = await fetch(`http://localhost:3000/songs/${id}`);
+    let song = await fetch(`http://localhost:3000/songs/${id}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
+        }, 
+    });
     let item = await song.json();
   
     const table = document.getElementById("playlist-songs-table");
@@ -65,13 +71,19 @@ async function addToPlaylist(id) {
 }
 
 async function addSongToPlaylist(id) {
-    let playlist = await fetch(`http://localhost:3000/playlists/${sessionStorage.getItem('token')}`);
+    let playlist = await fetch(`http://localhost:3000/playlists/${sessionStorage.getItem('token')}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
+        },
+    });
     let playlistItem = await playlist.json();
 
     const response = await fetch("http://localhost:3000/playlists/add-song-to-playlist", {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
         },
         body: JSON.stringify({
             playlistId: playlistItem.id,
@@ -86,13 +98,19 @@ async function removeFromPlaylist(item) {
     let row = item.parentNode.parentNode;
     row.parentNode.removeChild(row);
 
-    let playlist = await fetch(`http://localhost:3000/playlists/${sessionStorage.getItem('token')}`);
+    let playlist = await fetch(`http://localhost:3000/playlists/${sessionStorage.getItem('token')}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
+        },
+    });
     let playlistItem = await playlist.json();
 
     const response = await fetch("http://localhost:3000/playlists/delete-song-from-playlist", {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
         },
         body: JSON.stringify({
             playlistId: playlistItem.id,
@@ -103,7 +121,13 @@ async function removeFromPlaylist(item) {
 
 
 async function loadTableAllSongs() {
-    let songs = await fetch('http://localhost:3000/songs');
+
+    let songs = await fetch('http://localhost:3000/songs', {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
+        },
+    });
     let items = await songs.json();
 
     loadTableData(items);
@@ -111,7 +135,7 @@ async function loadTableAllSongs() {
 }
 
 
-loadTableAllSongs();
+
 
 
 

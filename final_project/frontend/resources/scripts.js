@@ -15,7 +15,7 @@ loginSubmitBtn.onclick = async function (event) {
         return;
     }
     let user = { username: username.value, password: password.value }
-    const response = await fetch("http://localhost:3000/users/login", {
+    const response = await fetch("http://localhost:3000/login", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -28,8 +28,9 @@ loginSubmitBtn.onclick = async function (event) {
         saveToken(final_response?.token);
         hide(beforeLoginContent);
         show(afterLoginContent);
-        console.log(final_response)
         renderPlaylist(final_response?.token);
+        userTokenGlobal = final_response?.token;
+        loadTableAllSongs();
     }
    
 }
@@ -67,7 +68,12 @@ async function renderPlaylist(token) {
     const table = document.getElementById("playlist-songs-table");
     table.innerHTML = '';
 
-    let playlist = await fetch(`http://localhost:3000/playlists/${token}`);
+    let playlist = await fetch(`http://localhost:3000/playlists/${token}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': token
+        },
+    });
     let playlistItem = await playlist.json();
 
     if (playlistItem.songs.length > 0) {
@@ -75,3 +81,8 @@ async function renderPlaylist(token) {
     }
 
 }
+
+
+
+
+
