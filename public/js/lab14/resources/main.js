@@ -20,6 +20,7 @@ submitButton.onclick = function(event){
 
     saveBooks(bookToSave);
 
+    allBooksDiv.innerHTML = '';
     renderBook();
 }
 
@@ -37,7 +38,6 @@ async function saveBooks(book) {
 
 async function renderBook() {
     let books = await fetch('http://localhost:3000/books/').then(response => response.json());
-  
 
     books.forEach(book => {
         allBooksDiv.innerHTML += `

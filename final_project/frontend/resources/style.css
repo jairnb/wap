@@ -12,6 +12,9 @@ p {
     color: grey;
 }
 
+.navbar-search {
+    margin-left: 13%;
+}
 
 .audio-player {
     /* position: absolute; */
