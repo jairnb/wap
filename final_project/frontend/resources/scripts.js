@@ -6,6 +6,7 @@ let afterLoginContent = document.getElementsByClassName('after-login-content');
 let username = document.getElementById('username');
 let password = document.getElementById('password');
 let userTokenGlobal = null;
+
 hide(afterLoginContent);
 
 loginSubmitBtn.onclick = async function (event) {
@@ -41,6 +42,7 @@ logoutBtn.onclick = function (event) {
     password.value = '';
     hide(afterLoginContent);
     show(beforeLoginContent);
+    document.getElementById("login-form-div").style = 'login-form-class-div'; 
 }
 
 function saveToken(token){
@@ -64,23 +66,7 @@ function show(elements) {
 }
 
 
-async function renderPlaylist(token) {
-    const table = document.getElementById("playlist-songs-table");
-    table.innerHTML = '';
 
-    let playlist = await fetch(`http://localhost:3000/playlists/${token}`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'token': token
-        },
-    });
-    let playlistItem = await playlist.json();
-
-    if (playlistItem.songs.length > 0) {
-        playlistItem.songs.forEach(item => addToPlaylist(item));   
-    }
-
-}
 
 
 

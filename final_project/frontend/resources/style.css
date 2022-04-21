@@ -2,7 +2,10 @@
 
 /* #2E59D9 */
 
-
+.login-form-class-div {
+    margin-left: auto; 
+    margin-right: 0;
+}
 
 p {
     display: inline-block;

@@ -19,4 +19,18 @@ module.exports = class Song {
     static getById(id) {
         return songs.find( s => s.id == id);
     }
+
+    static search(title){
+        return title == null || title == undefined || title == ''
+        ?  songs
+        : songs.filter(s => s.title.includes(title));
+    }
+
+    static getPlaylistSongs(ids) {
+        return songs.filter(s => s.id.includes(ids));
+    }
+
+    static getTitle(id) {
+        return songs.find( s => s.id == id).title;
+    }
 }

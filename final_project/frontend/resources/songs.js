@@ -1,4 +1,4 @@
-// const allSongsTable = document.getElementById('all-songs-table');
+const searchBtn = document.getElementById('search-btn');
 
 function loadTableData(items) {
     const table = document.getElementById("all-songs-table");
@@ -36,7 +36,7 @@ async function addToPlaylist(id) {
   
     let check_existence = false;
 
-    for (i = 1; i < table.rows.length; i++){
+    for (i = 0; i < table.rows.length; i++){
         let oCells = table.rows.item(i).cells;
 
         for(var j = 0; j < oCells.length; j++){
@@ -61,16 +61,16 @@ async function addToPlaylist(id) {
         actions.innerHTML = `<a class="btn btn-circle btn-primary ml-5" data-idSong="${item.id}" onClick="removeFromPlaylist(this)" type="button">
                                 <i class="fas fa-minus fa-sm"></i>
                             </a>
-                            <a class="btn btn-circle btn-primary ml-5" type="button">
+                            <a class="btn btn-circle btn-primary ml-5" onClick="playMusic(${item.id})" type="button">
                                 <i class="fas fa-play fa-sm"></i>
                             </a>
                             `
     }
 
-    addSongToPlaylist(id);
+    addSongToPlaylistBackend(id);
 }
 
-async function addSongToPlaylist(id) {
+async function addSongToPlaylistBackend(id) {
     let playlist = await fetch(`http://localhost:3000/playlists/${sessionStorage.getItem('token')}`, {
         headers: {
             'Content-Type': 'application/json',
@@ -134,8 +134,34 @@ async function loadTableAllSongs() {
 
 }
 
+searchBtn.onclick = async function(event) {
+    const searchInput = document.getElementById('search-input');
 
+    let songs = await fetch(`http://localhost:3000/songs/search?title=${searchInput.value}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': userTokenGlobal
+        },
+    });
+    let items = await songs.json();
+    loadTableData(items);
 
+}
 
+async function renderPlaylist(token) {
+    const table = document.getElementById("playlist-songs-table");
+    table.innerHTML = '';
 
+    let playlist = await fetch(`http://localhost:3000/playlists/${token}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'token': token
+        },
+    });
+    let playlistItem = await playlist.json();
 
+    if (playlistItem.songs.length > 0) {
+        playlistItem.songs.forEach(item => addToPlaylist(item));   
+    }
+
+}

@@ -1,3 +1,5 @@
+const path = require('path');
+const fs = require('fs');
 const Song = require('../models/song');
 
 exports.getAll = (req, res, next) => {
@@ -8,7 +10,18 @@ exports.getById = (req, res, next) => {
     res.json(Song.getById(req.params.id));
 }
 
-exports.playSong = (req, res, next) => {
-    let song = Song.find(s => s.id == req.params.id)
-    res.sendFile(path.join(__dirname, '..', 'songs', song.src))
+exports.getTitle = (req, res, next) => {
+    res.json(Song.getTitle(req.params.id));
 }
+
+exports.search = (req, res, next) => {
+    console.log('assa ',req.query.title)
+    res.json(Song.search(req.query.title));
+}
+
+exports.playSong = (req, res, next) => {
+    // res.sendFile(path.join(__dirname, '..', 'songs', Song.getById(req.params.id).src));
+    const src = fs.createReadStream(path.join(__dirname, '..', 'songs', Song.getById(req.params.id).src));
+    src.pipe(res);
+}
+
