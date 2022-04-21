@@ -1,3 +1,9 @@
+window.onload = function () {
+    let token = sessionStorage.getItem('token');
+    if (token != undefined || token != null) {
+        loginHelper(token);
+    }
+}
 
 let loginSubmitBtn = document.getElementById('login-submit-btn');
 let logoutBtn = document.getElementById('logout-btn');
@@ -5,9 +11,12 @@ let beforeLoginContent = document.getElementsByClassName('before-login-content')
 let afterLoginContent = document.getElementsByClassName('after-login-content');
 let username = document.getElementById('username');
 let password = document.getElementById('password');
+let error_msg = document.getElementById('error-msg');
 let userTokenGlobal = null;
 
 hide(afterLoginContent);
+
+
 
 loginSubmitBtn.onclick = async function (event) {
     event.preventDefault();
@@ -27,17 +36,24 @@ loginSubmitBtn.onclick = async function (event) {
     
     if (response.status == 200) {
         saveToken(final_response?.token);
-        hide(beforeLoginContent);
-        show(afterLoginContent);
-        renderPlaylist(final_response?.token);
-        userTokenGlobal = final_response?.token;
-        loadTableAllSongs();
+        loginHelper(final_response?.token);
     }
-   
+    if (response.status == 404) {
+        error_msg.style.display = 'block';
+    }
 }
 
+function loginHelper(token) {
+    hide(beforeLoginContent);
+    show(afterLoginContent);
+    renderPlaylist(token);
+    userTokenGlobal = token;
+    loadTableAllSongs();
+}
+
+
 logoutBtn.onclick = function (event) {
-    // sessionStorage.removeItem('token');
+    sessionStorage.removeItem('token');
     username.value = '';
     password.value = '';
     hide(afterLoginContent);

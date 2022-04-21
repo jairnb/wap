@@ -23,7 +23,7 @@ module.exports = class Song {
     static search(title){
         return title == null || title == undefined || title == ''
         ?  songs
-        : songs.filter(s => s.title.includes(title));
+        : songs.filter(s => s.title.toLowerCase().includes(title.toLowerCase()));
     }
 
     static getPlaylistSongs(ids) {

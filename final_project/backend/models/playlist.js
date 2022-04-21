@@ -1,4 +1,4 @@
-const playlists = [{ id: 1, userToken: '123654', songs: [1, 2] }]
+const playlists = [{ id: 1, userToken: '123654', songs: [1, 2] }, { id: 2, userToken: '12365', songs: [] }]
 
 
 module.exports = class Playlist {

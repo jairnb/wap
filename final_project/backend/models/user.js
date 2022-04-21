@@ -1,6 +1,6 @@
 const Playlist = require('./playlist');
 
-const users_arr = [ { id: 1, username: 'Pedro', password: '1234', token: '123654'}];
+const users_arr = [ { id: 1, username: 'pedro', password: '1234', token: '123654'}, { id: 2, username: '12', password: '12', token: '12365'}];
 
 let User = class  {
     constructor(username, password){
@@ -30,14 +30,16 @@ function login(user_form) {
     if (user_login != undefined) {
         return {
             msg: 'success login',
-            token: user_login.token 
+            token: user_login.token ,
+            status: true,
         }
     }else {
-        let u = User.save(user_form);
-        Playlist.save(u.token);
+        // let u = User.save(user_form);
+        // Playlist.save(u.token);
         return {
             msg: 'new user added',
-            token: u.token,
+            // token: u.token,
+            status: false,
         }
     }
 }

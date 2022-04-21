@@ -13,7 +13,13 @@ app.use(express.urlencoded({ extended : true }));
 app.use(express.static(path.join(__dirname, 'songs')));
 
 app.use('/login', (req, res, next) => {
-    res.status(200).json(loginUser.login(req.body));
+    let result = loginUser.login(req.body);
+    if (result.status == true) {
+        res.status(200).json(result);
+    }else {
+        res.status(404).json(result);
+    }
+    
 });
 
 app.use((req, res, next) => {

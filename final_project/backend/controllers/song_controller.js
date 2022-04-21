@@ -15,7 +15,6 @@ exports.getTitle = (req, res, next) => {
 }
 
 exports.search = (req, res, next) => {
-    console.log('assa ',req.query.title)
     res.json(Song.search(req.query.title));
 }
 
